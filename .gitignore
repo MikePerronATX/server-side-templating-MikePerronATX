@@ -2,6 +2,7 @@
 *
 #unignore things we want to track
 !images
+!css
 !*/
 !*.php
 !*.html
@@ -10,6 +11,8 @@
 !*.ico
 !*.jpg
 !*.png
+!*.js
+
 
 # gitignore files are not usually included but I'm includeing it so you have
 # a starter file. You can leave it in your repo.
