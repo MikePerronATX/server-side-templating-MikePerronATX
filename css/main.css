@@ -6,11 +6,11 @@ footer{
     background: #bdd7ff;
 }
 
-.nav-section{
+/* .nav-section{
     padding-top: 10px;
     height: 60px;
     background: #5681c4;
-}
+} */
 
 .body-div{
     text-align: center;
@@ -19,4 +19,25 @@ footer{
 
 .centered{
     text-align: center;
+}
+
+.navbar {
+    background:#6ab446;
+}
+.nav-link,
+.navbar-brand {
+    color: #fff;
+    cursor: pointer;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: #000;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+#headerTitle{
+    
 }
