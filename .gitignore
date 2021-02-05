@@ -1,6 +1,7 @@
 #ignore everything
 *
 #unignore things we want to track
+!images
 !*/
 !*.php
 !*.html
