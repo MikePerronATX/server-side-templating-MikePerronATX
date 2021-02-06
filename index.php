@@ -30,7 +30,7 @@ $header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "hom
 // notice this holds mixed numeric and string data,
 // you can do this in a loosly typed language like PHP
 // you can add more things to send if you like
-$body_data = ["helloworld" => "Hello World", "pi" => 3.14, "digits" => "15926535"];
+$body_data = ["body-img" => mask];
 
 //this is being used to send a footer title and local time to the footer
 // you can add more things to send if you like
