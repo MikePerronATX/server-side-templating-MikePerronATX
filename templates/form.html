@@ -11,5 +11,24 @@ your comment header here
     <div class="body-img">
         <img src="/images/{{body-img}}">
     </div>
+    <div class="form">
+        <form action="process.php"    method="post">
+            <div class="col-sm-12">Enter your title.
+            <input type="text" id="title" placeholder="title" name="title" maxlength="64"><br>
+            </div>
+            <div class="col-sm-12">Enter your favorite drink.
+            <input type="text" id="drink" placeholder="favorite drink" name="drink" maxlength="64"><br>
+            </div>
+            <div class="col-sm-12">Enter your pet's name.
+            <input type="text" id="pet" placeholder="pet's name"name="pet" maxlength="64"><br>
+            </div>
+            <div class="col-sm-12">Enter a fictional place.
+            <input type="text" id="ficPlace" placeholder="fictional place"name="ficPlace" maxlength="64"><br>
+            </div>
+            <div class="col-sm-12">Enter a real place.
+            <input type="text" id="rlPlace" placeholder="real place"name="rlPlace" maxlength="64"><br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
    
 </div>
