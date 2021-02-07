@@ -12,7 +12,7 @@ $mustache = new Mustache_Engine;
 
 // these lines load your header, footer, and body template into strings
 $header = file_get_contents('templates/header.html');
-$body = file_get_contents('templates/home2.html');
+$body = file_get_contents('templates/form.html');
 $footer = file_get_contents('templates/footer.html');
 
 /*
@@ -25,7 +25,7 @@ $footer = file_get_contents('templates/footer.html');
 // this will be used to send the page title into the page
 // you can add more things to send if you like
 $header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "home" => HOME,
-                "home2" => HOME2, "home3" => HOME3];
+                "home2" => FORM];
 
 // notice this holds mixed numeric and string data,
 // you can do this in a loosly typed language like PHP
