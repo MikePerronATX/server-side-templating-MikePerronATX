@@ -16,7 +16,11 @@ body{
     text-align: center;
 }
 footer{
-    background: #bdd7ff;
+    background: #b0e61c;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
 }
 h1{
     padding: 1px;
