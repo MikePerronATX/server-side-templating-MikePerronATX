@@ -35,7 +35,12 @@ $body_data = ["body-img" => "/images/new-orleans-hero.jpg",
                 "drDesc"=>"favorite drink",
                 "peDesc"=>"pet name",
                 "fiDesc"=>"fictional place",
-                "rlDesc"=>"real place"];
+                "rlDesc"=>"real place",
+                "tl" => "title",
+                "dk" => "drink",
+                "pe" => "pet",
+                "fic" => "ficPlace",
+                "rl" => "rlPlace"];
 
 
 // , "titleDesc" => "title",
