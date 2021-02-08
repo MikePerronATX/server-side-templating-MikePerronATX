@@ -30,8 +30,8 @@ $header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "hom
 // notice this holds mixed numeric and string data,
 // you can do this in a loosly typed language like PHP
 // you can add more things to send if you like
-$body_data = ["notVal" => $notValid, "sentence" => $sentence,
-                "sentence"=> "echo $sentence",
+$body_data = ["notVal" => ".$notValid", "sentence" => $sentence,
+                "sentence"=> ".$sentence",
                 "titleSentence"=> $titleSentence,
                 "drinkSentence"=> $drinkSentence,
                 "petSentence" => $petSentence,
@@ -104,7 +104,7 @@ if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !em
 * a saftey feature similar to this.
 * Do not delete this comment.
 * ************************************************************************ */                
-   echo $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
+   echo $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace. "<br>";
     
     // echo '<div class="bg">';
         // echo '<div id="response">' .$sentence. '</div>' ;
@@ -114,7 +114,7 @@ if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !em
     
         $titleLen = strlen($title);
         if ($titleLen > 0) {
-           $titleSentence = $title. " is " . $titleLen . " characters. <br>";
+           echo $titleSentence = $title. " is " . $titleLen . " characters. <br>";
         }
 
         $drinkLen = strlen($drink);

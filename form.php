@@ -30,7 +30,12 @@ $header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "hom
 // notice this holds mixed numeric and string data,
 // you can do this in a loosly typed language like PHP
 // you can add more things to send if you like
-$body_data = ["body-img" => "/images/new-orleans-hero.jpg"];
+$body_data = ["body-img" => "/images/new-orleans-hero.jpg",
+                "tiDesc"=>"title",
+                "drDesc"=>"favorite drink",
+                "peDesc"=>"pet name",
+                "fiDesc"=>"fictional place",
+                "rlDesc"=>"real place"];
 
 
 // , "titleDesc" => "title",
