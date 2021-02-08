@@ -25,12 +25,17 @@ $footer = file_get_contents('templates/footer.html');
 // this will be used to send the page title into the page
 // you can add more things to send if you like
 $header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "home" => HOME,
-                "home2" => FORM];
+                "form" => FORM];
 
 // notice this holds mixed numeric and string data,
 // you can do this in a loosly typed language like PHP
 // you can add more things to send if you like
-$body_data = ["body-img" => "new-orleans-hero.jpg"];
+$body_data = ["body-img" => "/images/new-orleans-hero.jpg"];
+
+
+// , "titleDesc" => "title",
+//         "drinkDesc" => "favorite drink", "petDesc" => "pet name",
+//         "ficDesc" => "fictional place", "rlDesc" => "real place"];
 
 //this is being used to send a footer title and local time to the footer
 // you can add more things to send if you like

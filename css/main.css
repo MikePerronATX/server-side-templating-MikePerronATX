@@ -6,7 +6,7 @@ body{
     text-align: center;
     margin: 3px;
 }
-.body-img{
+.body-img-col-sm-4{
     
     
     border: #dd1313;
@@ -36,7 +36,7 @@ footer{
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     margin-top: 2%;
-    margin-bottom: 30%;
+    margin-bottom: 0%;
   }
   .form input {
     font-family: "Roboto", sans-serif;
@@ -99,10 +99,6 @@ img{
     margin-bottom: 75px;
 }
 
-
-
-
-
 .navbar {
     background:#833999;
 }
@@ -122,8 +118,23 @@ img{
     justify-content: flex-end;
 }
 p{
-    font-size: 12px;
     text-align: left;
+}
+.restaurant-text-col-sm-8{
+  max-width:100%;
+    margin-bottom: 15%;
+    margin-left:6%;
+    
+    padding: 40px;
+    background-color: darkorange;
+    text-align:left;
+    
+}
+#text{
+    font-size: 45px;
+}
+.response{
+    font-size: 45px;
 }
 
 
@@ -162,7 +173,7 @@ p{
     h2 {font-size:2rem;}
     .form{max-width: 290px; font-size: 16px; margin-left: 10%; margin-top: 0%; float: left;}
     .bg{max-width: 500px; font-size: 18px;}
-    img{width: 40%; height: 40%; float: left; margin-left: 6%;}
+    img{width: 40%;height: 40%;float: left;margin-left: 6%;}
     #response{font-size: 18px;}
     }
     

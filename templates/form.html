@@ -9,113 +9,115 @@ your comment header here
      <hr>
         <h2>Please Answer the Following Questions:</h2>
     <div class="body-img">
-        <img src="/images/{{body-img}}">
+        <img src="{{body-img}}">
     </div>
     <div class="form">
         <form action="process.php"    method="post">
             <div class="col-sm-12">Enter your title.
-            <input type="text" id="title" placeholder="title" name="title" maxlength="64"><br>
+            <input type="text" id="title" placeholder="{{titleDesc}}" name="title" maxlength="64"><br>
             </div>
             <div class="col-sm-12">Enter your favorite drink.
-            <input type="text" id="drink" placeholder="favorite drink" name="drink" maxlength="64"><br>
+            <input type="text" id="drink" placeholder="{{drinkDesc}}" name="drink" maxlength="64"><br>
             </div>
             <div class="col-sm-12">Enter your pet's name.
-            <input type="text" id="pet" placeholder="pet's name"name="pet" maxlength="64"><br>
+            <input type="text" id="pet" placeholder="{{petDesc}}" name="pet" maxlength="64"><br>
             </div>
             <div class="col-sm-12">Enter a fictional place.
-            <input type="text" id="ficPlace" placeholder="fictional place"name="ficPlace" maxlength="64"><br>
+            <input type="text" id="ficPlace" placeholder="{{ficDesc}}" name="ficPlace" maxlength="64"><br>
             </div>
             <div class="col-sm-12">Enter a real place.
-            <input type="text" id="rlPlace" placeholder="real place"name="rlPlace" maxlength="64"><br>
+            <input type="text" id="rlPlace" placeholder="{{rlDesc}}" name="rlPlace" maxlength="64"><br>
             </div>
             <button type="submit">Submit</button>
         </form>
    </div>
-   <div class="restaurant-text">
-       <p>Galatoire's
-        209 Bourbon St.
-        New Orleans, LA 70130
-        French Quarter
-        Creole, Bistros, French, Seafood
+   <!-- <div class="restaurant-text-col-sm-8">
+    <p>
+        <h6>Galatoire's</h6><br>
+        209 Bourbon St.<br>
+        New Orleans, LA 70130<br>
+        French Quarter<br>
+        Creole, Bistros, French, Seafood<br>
        </p>
        <p>
-        Antoine's Restaurant
-        713 St. Louis St.
-        New Orleans, LA 70130
-        French Quarter
-        French, Creole
+        <h6>Antoine's Restaurant</h6><br>
+        713 St. Louis St.<br>
+        New Orleans, LA 70130<br>
+        French Quarter<br>
+        French, Creole<br>
         </p>
         <p>
-        Arnaud's Restaurant
-        813 Bienville St.
-        New Orleans, LA 70112
-        French Quarter
-        Creole, Continental, French
+        <h6>Arnaud's Restaurant</h6><br>
+        813 Bienville St.<br>
+        New Orleans, LA 70112<br>
+        French Quarter<br>
+        Creole, Continental, French<br>
         </p>
         <p>
-        Cafe Du Monde
-        FRENCH QUARTER
-        800 Decatur St.
-        New Orleans, LA 70116
-        French Quarter
-        Coffee Shops
+        <h6>Cafe Du Monde</h6><br>
+        FRENCH QUARTER<br>
+        800 Decatur St.<br>
+        New Orleans, LA 70116<br>
+        French Quarter<br>
+        Coffee Shops<br>
         </p>
         <p>
-        Pat O'Brien's Bar
-        718 St. Peter St.
-        New Orleans, LA 70116
-        French Quarter
-        Piano Bars, Bars & Taverns, Dueling Pianos
+        <h6>Pat O'Brien's Bar</h6><br>
+        718 St. Peter St.<br>
+        New Orleans, LA 70116<br>
+        French Quarter<br>
+        Piano Bars, Bars &amp; Taverns, Dueling Pianos<br>
         </p>
         <p>
-        Napoleon House
-        500 Chartres St.
-        New Orleans, LA 70130
-        French Quarter
-        Creole, Delis/Sandwiches, Italian
+        <h6>Napoleon House</h6><br>
+        500 Chartres St.<br>
+        New Orleans, LA 70130<br>
+        French Quarter<br>
+        Creole, Delis/Sandwiches, Italian<br>
         </p>
         <p>
-        Brennan's
-        417 Royal St.
-        New Orleans, LA 70130
-        French Quarter
-        Creole, Contemporary, French
+        <h6>Brennan's</h6><br>
+        417 Royal St.<br>
+        New Orleans, LA 70130<br>
+        French Quarter<br>
+        Creole, Contemporary, French<br>
         </p>
         <p>
-        Doris Metropolitan New Orleans
-        620 Chartres St.
-        New Orleans, LA 70130
-        French Quarter
-        Steakhouses, Greek/Mediterranean
+        <h6>Doris Metropolitan New Orleans</h6><br>
+        620 Chartres St.<br>
+        New Orleans, LA 70130<br>
+        French Quarter<br>
+        Steakhouses, Greek/Mediterranean<br>
         </p>
         <p>
-        Old Absinthe House
-        240 Bourbon St.
-        New Orleans, LA 70112
-        French Quarter
-        Serves Food, Patio/Outdoor Seating
+        <h6>Old Absinthe House</h6><br>
+        240 Bourbon St.<br>
+        New Orleans, LA 70112<br>
+        French Quarter<br>
+        Serves Food, Patio/Outdoor Seating<br>
         </p>
         <p>
-        Cane & Table
-        1113 Decatur St.
-        New Orleans , LA 70116
-        French Quarter
-        Contemporary, Cuban, Vegetarian
+        <h6>Cane &amp; Table</h6><br>
+        1113 Decatur St.<br>
+        New Orleans , LA 70116<br>
+        French Quarter<br>
+        Contemporary, Cuban, Vegetarian<br>
         </p>
         <p>
-        Mr. B's Bistro
-        201 Royal St.
-        New Orleans, LA 70130
-        French Quarter
-        Creole, Bistros, Contemporary, Seafood
+        <h6>Mr. B's Bistro</h6><br>
+        201 Royal St.<br>
+        New Orleans, LA 70130<br>
+        French Quarter<br>
+        Creole, Bistros, Contemporary, Seafood<br>
         </p>
         <p>
-        Restaurant R'evolution
-        ROYAL SONESTA HOTEL
-        777 Bienville St.
-        New Orleans, LA 70130
-        French Quarter
-        Contemporary, Cajun, Creole, Seafood
+        <h6>Restaurant R'evolution</h6><br>
+        ROYAL SONESTA HOTEL<br>
+        777 Bienville St.<br>
+        New Orleans, LA 70130<br>
+        French Quarter<br>
+        Contemporary, Cajun, Creole, Seafood<br>
     </p>
-    </div>
+    </div> -->
+    
 </div>
