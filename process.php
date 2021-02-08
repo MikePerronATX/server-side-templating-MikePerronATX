@@ -30,8 +30,9 @@ $header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "hom
 // notice this holds mixed numeric and string data,
 // you can do this in a loosly typed language like PHP
 // you can add more things to send if you like
-$body_data = ["notVal" => ".$notValid", "sentence" => $sentence,
-                "sentence"=> ".$sentence",
+$body_data = [  "notVal" => $notValid,
+                "sentence" => $sentence,
+                "sentence" => $sentence,
                 "titleSentence"=> $titleSentence,
                 "drinkSentence"=> $drinkSentence,
                 "petSentence" => $petSentence,
@@ -40,6 +41,9 @@ $body_data = ["notVal" => ".$notValid", "sentence" => $sentence,
                 "sizeOfSentence" => $sizeOfSentence,
                 "bigTitle" => $bigTitle,
                 "smallTitle" => $smallTitle];
+
+
+                echo '<div id="response">' .$sentence. '</div>' ;
 
 
 //this is being used to send a footer title and local time to the footer
@@ -104,37 +108,37 @@ if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !em
 * a saftey feature similar to this.
 * Do not delete this comment.
 * ************************************************************************ */                
-   echo $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace. "<br>";
-    
-    // echo '<div class="bg">';
-        // echo '<div id="response">' .$sentence. '</div>' ;
-        // echo "<br>";
+   $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
+    echo sprintf('You are %s %s %s of %s and  %s.',
+    $title,
+    $drink,
+    $pet,
+    $ficPlace,
+    $rlPlace);
 
-        // echo "Length of each part of the title: <br>";
-    
         $titleLen = strlen($title);
         if ($titleLen > 0) {
-           echo $titleSentence = $title. " is " . $titleLen . " characters. <br>";
+           echo $titleSentence = $title. " is " . $titleLen . " characters.";
         }
 
         $drinkLen = strlen($drink);
         if ($drinkLen > 0) {
-            echo $drinkSentence = $drink. " is " . $drinkLen . " characters. <br>";
+            echo $drinkSentence = $drink. " is " . $drinkLen . " characters.";
         }
         
         $petLen = strlen($pet);
         if ($petLen > 0) {
-            echo $petSentence = $pet. " is " . $petLen . " characters. <br>";
+            echo $petSentence = $pet. " is " . $petLen . " characters.";
         }
 
         $ficLen = strlen($ficPlace);
         if ($ficLen > 0) {
-            echo $ficSentence = $ficPlace. " is " . $ficLen . " characters. <br>";
+            echo $ficSentence = $ficPlace. " is " . $ficLen . " characters.";
         }
 
         $realLen = strlen($rlPlace);
         if ($realLen > 0) {
-            echo $rlSentence = $rlPlace. " is " . $realLen . " characters. <br>";
+            echo $rlSentence = $rlPlace. " is " . $realLen . " characters.";
         }
 
         $sentenceLength = strlen($sentence);
@@ -152,7 +156,10 @@ if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !em
 }
 else {
     // echo '<div class="bg">';
-       echo $notValid = "​I’m sorry, your input was not valid.<br>";
+    $notValid = "I’m sorryy, your input was not valid.";
+    echo sprintf('%s', $notValid);
+
+        
         // echo '<a href="form.php">try again</a><br>';
     
 }
