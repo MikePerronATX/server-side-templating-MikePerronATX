@@ -24,7 +24,9 @@ $footer = file_get_contents('templates/footer.html');
 
 // this will be used to send the page title into the page
 // you can add more things to send if you like
-$header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "home" => HOME,
+$header_data = ["pagetitle" => "Code03 Michael Perron",
+                "logo" => "Code03", 
+                "home" => HOME,
                 "form" => FORM];
 
 // notice this holds mixed numeric and string data,
@@ -51,7 +53,7 @@ $body_data = ["body-img" => "/images/new-orleans-hero.jpg",
 // you can add more things to send if you like
 $footer_data = [
     "localtime" => date('l jS \of F Y h:i:s A'),
-    "footertitle" => "Home Page"];
+    "footertitle" => "Form Page"];
 
 /*
  * this combines the variables with the templates and creates a complete web page.
