@@ -107,6 +107,7 @@ img{
     color: #fff;
     cursor: pointer;
     font-size: 10px;
+    margin-left:1%;
 }
 .nav-link {
     margin-right: 1em !important;
