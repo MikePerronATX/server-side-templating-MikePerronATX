@@ -1,9 +1,7 @@
 <?php
 /*
-Name: Michael Perron
-Coding 03
-Purpose: This page accepts user inputs from form, validates it,
-and processes it to be output to result.html.
+ * This file receives input from the user, validates it,
+ * processes it, and sends it to result.html to be displated.
  */
 
 require_once 'mustache/mustache/src/Mustache/Autoloader.php';
@@ -20,7 +18,7 @@ $header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "hom
 
 $footer_data = [
     "localtime" => date('l jS \of F Y h:i:s A'),
-    "footertitle" => "Home Page"];
+    "footertitle" => "Result Page"];
 
 /* * *********************************************
 * STEP 1: INPUT: Do NOT process, just get the data.
@@ -39,7 +37,6 @@ if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet']) 
     $ficPlace = "";
     $rlPlace = "";
 }
-
 /* * ******************************************************
 * STEP 2: VALIDATION: Always clean your input first!!!!
 * Do NOT process, only CLEAN and VALIDATE.
@@ -84,20 +81,20 @@ if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !em
 * if you have valid data from steps 1 and 2. Your code must always have
 * a saftey feature similar to this.
 * Do not delete this comment.
-* ************************************************************************ */ 
+* ************************************************************************ */                
     $body_data = [
         "result" => $sentence,
-        "titlesentence" => "the first word has " .$titleLen. "letters",
-        "drinksentence" => "the first word has " .$drinkLen. "letters",
-        "petsentence" => "the first word has " .$petLen. "letters",
-        "ficsentence" => "the first word has " .$ficLen. "letters",
-        "rlsentence" => "the first word has " .$realLen. "letters",
+        "titlesentence" => "the first word has " .$titleLen. " letters",
+        "drinksentence" => "the second word has " .$drinkLen. " letters",
+        "petsentence" => "the third word has " .$petLen. " letters",
+        "ficsentence" => "the fourth word has " .$ficLen. " letters",
+        "rlsentence" => "the fifth word has " .$realLen. " letters",
         "sizesentence" => "Length of the whole title (including spaces): " .$sentenceLength,
         "heckcute" => $heckcute,
-        "try" => "try again"];  
+        "try" => "try again"];
 }
 else {
-    $body_data = ["notVal" =>  "I’m sorry, your input was not valid."];
+    $body_data = ["notVal" =>  "I’m sorry, your input was not valid.", "try" => "try again"];
 }
 
 echo $mustache->render($header, $header_data) . PHP_EOL;
