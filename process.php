@@ -97,7 +97,7 @@ if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !em
         "try" => "try again"];  
 }
 else {
-    $body_data = ["notVal" =>  "I’m sorryyy, your input was not valid."];
+    $body_data = ["notVal" =>  "I’m sorry, your input was not valid."];
 }
 
 echo $mustache->render($header, $header_data) . PHP_EOL;
