@@ -24,7 +24,9 @@ $footer = file_get_contents('templates/footer.html');
 
 // this will be used to send the page title into the page
 // you can add more things to send if you like
-$header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "home" => HOME,
+$header_data = ["pagetitle" => "Code03 Michael Perron",
+                "logo" => "Code03",
+                "home" => HOME,
                 "form" => FORM];
 
 // notice this holds mixed numeric and string data,
