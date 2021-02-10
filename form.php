@@ -20,17 +20,7 @@ $header_data = ["pagetitle" => "Code03 Michael Perron",
                 "home" => HOME,
                 "form" => FORM];
 
-$body_data = ["body-img" => "/images/new-orleans-hero.jpg",
-                "tiDesc"=>"title",
-                "drDesc"=>"favorite drink",
-                "peDesc"=>"pet name",
-                "fiDesc"=>"fictional place",
-                "rlDesc"=>"real place",
-                "tl" => "title",
-                "dk" => "drink",
-                "pe" => "pet",
-                "fic" => "ficPlace",
-                "rl" => "rlPlace"];
+$body_data = ["body-img" => "/images/new-orleans-hero.jpg"];
 
 $footer_data = [
     "localtime" => date('l jS \of F Y h:i:s A'),
