@@ -24,79 +24,81 @@ $footer_data = [
 * STEP 1: INPUT: Do NOT process, just get the data.
 * Do not delete this comment,
 * ********************************************** */
-if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet']) && !empty($_POST['ficPlace']) && !empty($_POST['rlPlace'])) {
+if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet'])
+                && !empty($_POST['ficPlace']) && !empty($_POST['rlPlace'])) {
+
     $title = $_POST['title'];
     $drink = $_POST['drink'];
     $pet = $_POST['pet'];
     $ficPlace = $_POST['ficPlace'];
-    $rlPlace = $_POST['rlPlace'];
-} else {
+    $rlPlace = $_POST['rlPlace']; 
+
+    /* * ******************************************************
+    * STEP 2: VALIDATION: Always clean your input first!!!!
+    * Do NOT process, only CLEAN and VALIDATE.
+    * Do not delete this comment.
+    * ****************************************************** */            
+    $title = trim($title);
+    $drink = trim($drink);
+    $pet = trim($pet);
+    $ficPlace = trim($ficPlace);
+    $rlPlace = trim($rlPlace);
+
+    $title = strip_tags($title);
+    $drink = strip_tags($drink);
+    $pet = strip_tags($pet);
+    $ficPlace = strip_tags($ficPlace);
+    $rlPlace = strip_tags($rlPlace);
+
+    $title = substr($title, $titleLen, 64);
+    $drink = substr($drink, $drinkLen, 64);
+    $pet = substr($pet, $petLen, 64);
+    $ficPlace = substr($ficPlace, $ficLen, 64);
+    $rlPlace = substr($rlPlace, $realLen, 64);
+
+    $titleLen = strlen($title);
+    $drinkLen = strlen($drink);
+    $petLen = strlen($pet);
+    $ficLen = strlen($ficPlace);
+    $realLen = strlen($rlPlace);
+    $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
+    $sentenceLength = strlen($sentence);
+
+    if($sentenceLength > 30){
+        $heckcute = "That’s a heck of a title!​";
+    }
+    if($sentenceLength < 30){
+        $heckcute = "That’s a cute little title.";
+    }
+
+    if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !empty($rlPlace)) {
+    /* * *************************************************************************
+    * STEP 3 and 4: PROCESSING and OUTPUT: Notice this code only executes
+    * if you have valid data from steps 1 and 2. Your code must always have
+    * a saftey feature similar to this.
+    * Do not delete this comment.
+    * ************************************************************************ */                
+    $body_data = [
+        "result" => $sentence,
+        "titlelen" => $titleLen,
+        "drinklen" => $drinkLen,
+        "petlen" => $petLen,
+        "ficlen" => $ficLen,
+        "reallen" => $realLen,
+        "sentlen" => $sentenceLength,
+        "empty" => "d-none",
+        "heckcute" => $heckcute,];
+    }
+}
+else {
     $title = "";
     $drink = "";
     $pet = "";
     $ficPlace = "";
     $rlPlace = "";
+    
+    $body_data = ["full" =>  "d-none"];
 }
-/* * ******************************************************
-* STEP 2: VALIDATION: Always clean your input first!!!!
-* Do NOT process, only CLEAN and VALIDATE.
-* Do not delete this comment.
-* ****************************************************** */            
-$title = trim($title);
-$drink = trim($drink);
-$pet = trim($pet);
-$ficPlace = trim($ficPlace);
-$rlPlace = trim($rlPlace);
-
-$title = strip_tags($title);
-$drink = strip_tags($drink);
-$pet = strip_tags($pet);
-$ficPlace = strip_tags($ficPlace);
-$rlPlace = strip_tags($rlPlace);
-
-$title = substr($title, $titleLen, 64);
-$drink = substr($drink, $drinkLen, 64);
-$pet = substr($pet, $petLen, 64);
-$ficPlace = substr($ficPlace, $ficLen, 64);
-$rlPlace = substr($rlPlace, $realLen, 64);
-
-$titleLen = strlen($title);
-$drinkLen = strlen($drink);
-$petLen = strlen($pet);
-$ficLen = strlen($ficPlace);
-$realLen = strlen($rlPlace);
-$sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
-$sentenceLength = strlen($sentence);
-
-if($sentenceLength > 30){
-    $heckcute = "That’s a heck of a title!​";
-}
-if($sentenceLength < 30){
-    $heckcute = "That’s a cute little title.";
-}
-
-if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !empty($rlPlace)) {
-/* * *************************************************************************
-* STEP 3 and 4: PROCESSING and OUTPUT: Notice this code only executes
-* if you have valid data from steps 1 and 2. Your code must always have
-* a saftey feature similar to this.
-* Do not delete this comment.
-* ************************************************************************ */                
-    $body_data = [
-        "result" => $sentence,
-        "titlesentence" => "the first word has " .$titleLen. " letters",
-        "drinksentence" => "the second word has " .$drinkLen. " letters",
-        "petsentence" => "the third word has " .$petLen. " letters",
-        "ficsentence" => "the fourth word has " .$ficLen. " letters",
-        "rlsentence" => "the fifth word has " .$realLen. " letters",
-        "sizesentence" => "Length of the whole title (including spaces): " .$sentenceLength,
-        "heckcute" => $heckcute,
-        "try" => "try again"];
-}
-else {
-    $body_data = ["notVal" =>  "I’m sorry, your input was not valid.", "try" => "try again"];
-}
-
 echo $mustache->render($header, $header_data) . PHP_EOL;
 echo $mustache->render($body, $body_data) . PHP_EOL;
 echo $mustache->render($footer, $footer_data) . PHP_EOL;
