@@ -1,6 +1,6 @@
 <!--
 Name: Michael Perron
-Coding 03
+Coding 03 & 04
 Purpose: This page is the form template body.
 -->
 
@@ -28,7 +28,21 @@ Purpose: This page is the form template body.
             <div class="col-sm-12">Enter a real place.
             <input type="text" id="rlPlace" placeholder="real place" name="rlPlace" maxlength="64"><br>
             </div>
-            <button type="submit">Submit</button>
+            <div class="col-sm-12">Enter your email address.
+            <input type="text" id="email" placeholder="email" name="email" maxlength="64"><br>
+            </div>
+            <div class="col-sm-12">Confirm your email address.
+            <input type="text" id="remail" placeholder="confirm email" name="remail" maxlength="64"><br>
+            </div>
+            <div class="input-div">
+                <button id="names-send" type="submit" class="">Send</button>
+                <button id="names-clear" type="button" class="">Clear</button>
+            </div>
         </form>
+        <div id="msg">
+            <!-- message appears here -->
+            <br>
+        </div>
    </div>
 </div>
+<script src="main.js"></script>
