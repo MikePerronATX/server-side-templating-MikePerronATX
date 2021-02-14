@@ -76,28 +76,20 @@ function validate() {
     return errorMessage;
 }
 
-//JS objects to variable
+//JS object to button variable
 var sendBtn = document.getElementById("names-send");
 var clearBtn = document.getElementById("names-clear");
 
-//event listener for the send button
-function msgFunction () {
-    //bring the message area in to report errors.
+sendBtn.onclick = function () {
     var msgArea = document.getElementById("msg");
-    //get the validation of the form
     var msg = validate();
-    //report errors or submit the form
-    // returning true or false is what allows the form to submit or not
     if (msg === "") {
-        // will trigger the form to submit
         return true;
     } else {
         msgArea.innerHTML = msg;
-        // will prevent the form from submitting
         return false;
     }
 };
-
-// Assigning event listeners to the button
-sendBtn.addEventListener("click", msgFunction);
-clearBtn.addEventListener("click", clearForm);
+clearBtn.onclick = function () {
+    clearForm();
+};
