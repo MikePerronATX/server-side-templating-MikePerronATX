@@ -13,6 +13,11 @@ function clearForm() {
     document.getElementById("msg").innerHTML = "<br>";
 }
 
+function validEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
 function validate() {
     //empty error message
     var errorMessage = "";
@@ -62,6 +67,10 @@ function validate() {
     }
     if (emailName === "") {
         errorMessage += "Email cannot be empty.<br>";
+    }
+	//test to see if the email enetered is in correct form.
+    if (!validEmail(emailName)){
+        errorMessage += "Email address must be valid.<br>";
     }
     if (remailName === "") {
         errorMessage += "Email confirmation cannot be empty.<br>";
