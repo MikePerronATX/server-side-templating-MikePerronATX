@@ -65,12 +65,8 @@ function validate() {
     if (rlName === "") {
         errorMessage += "Real Place cannot be empty.<br>";
     }
-    if (emailName === "") {
-        errorMessage += "Email cannot be empty.<br>";
-    }
-	//test to see if the email enetered is in correct form.
-    if (!validEmail(emailName)){
-        errorMessage += "Email address must be valid.<br>";
+    if (emailName === "" || !validEmail(emailName)) {
+        errorMessage += "Email cannot be empty or an invalid address.<br>";
     }
     if (remailName === "") {
         errorMessage += "Email confirmation cannot be empty.<br>";
