@@ -25,13 +25,16 @@ $footer_data = [
 * Do not delete this comment,
 * ********************************************** */
 if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet'])
-                && !empty($_POST['ficPlace']) && !empty($_POST['rlPlace'])) {
+                && !empty($_POST['ficPlace']) && !empty($_POST['rlPlace'])
+                && !empty($_POST['email']) && !empty($_POST['remail'])) {
 
     $title = $_POST['title'];
     $drink = $_POST['drink'];
     $pet = $_POST['pet'];
     $ficPlace = $_POST['ficPlace'];
-    $rlPlace = $_POST['rlPlace']; 
+    $rlPlace = $_POST['rlPlace'];
+    $email = $_POST['email'];
+    $remail = $_POST['remail'];
 
     /* * ******************************************************
     * STEP 2: VALIDATION: Always clean your input first!!!!
@@ -43,24 +46,32 @@ if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet'])
     $pet = trim($pet);
     $ficPlace = trim($ficPlace);
     $rlPlace = trim($rlPlace);
+    $email = trim($email);
+    $remail = trim($remail);
 
     $title = strip_tags($title);
     $drink = strip_tags($drink);
     $pet = strip_tags($pet);
     $ficPlace = strip_tags($ficPlace);
     $rlPlace = strip_tags($rlPlace);
+    $email = strip_tags($email);
+    $remail = strip_tags($remail);
 
     $title = substr($title, $titleLen, 64);
     $drink = substr($drink, $drinkLen, 64);
     $pet = substr($pet, $petLen, 64);
     $ficPlace = substr($ficPlace, $ficLen, 64);
     $rlPlace = substr($rlPlace, $realLen, 64);
+    $email = substr($email, $emailLen, 64);
+    $remail = substr($remail, $remailLen, 64);
 
     $titleLen = strlen($title);
     $drinkLen = strlen($drink);
     $petLen = strlen($pet);
     $ficLen = strlen($ficPlace);
     $realLen = strlen($rlPlace);
+    $emailLen = strlen($email);
+    $remailLen = strlen($remail);
     $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
     $sentenceLength = strlen($sentence);
 
@@ -85,6 +96,8 @@ if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet'])
         "petlen" => $petLen,
         "ficlen" => $ficLen,
         "reallen" => $realLen,
+        "emaillen" => $emailLen,
+        "remaillen" => $remailLen,
         "sentlen" => $sentenceLength,
         "empty" => "d-none",
         "heckcute" => $heckcute,];
