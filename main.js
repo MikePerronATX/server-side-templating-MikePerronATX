@@ -75,3 +75,7 @@ function validate() {
     //send the errors back or send an empty string if there is no error
     return errorMessage;
 }
+
+//JS objects to variable
+var sendBtn = document.getElementById("names-send");
+var clearBtn = document.getElementById("names-clear");
