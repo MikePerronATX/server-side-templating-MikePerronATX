@@ -97,3 +97,7 @@ function msgFunction () {
         return false;
     }
 };
+
+// Assigning event listeners to the button
+sendBtn.addEventListener("click", msgFunction);
+clearBtn.addEventListener("click", clearForm);
