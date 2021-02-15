@@ -1,3 +1,8 @@
+/* 
+Name: Michael Perron
+Coding 04
+Purpose: This page is to add the needed js to make page perform dynamically.
+*/
 "use strict";
 
 //clear function
