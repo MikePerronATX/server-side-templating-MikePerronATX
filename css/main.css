@@ -108,6 +108,10 @@ img{
     padding: 5px;
     margin-bottom: 75px;
 }
+#msg{
+    color: rgb(110, 2, 2);
+    font-size: 7px;
+}
 .navbar {
     background:#833999;
 }
@@ -151,6 +155,7 @@ p{
     .bg{max-width: 250px; font-size: 12px;}
     .navbar-brand {font-size: 13px;}
     li {font-size: 26px;}
+    #msg{font-size: 10px;}
 }
     
 /* Medium devices (tablets, 600px and up) */
@@ -161,6 +166,7 @@ p{
     .bg{max-width: 350px; font-size: 16px; }
     .navbar-brand {font-size: 16px;}
     #response{font-size: 14px;}
+    #msg{font-size: 14px;}
 }
     
 /* Large devices (desktops, 750px and up) */
@@ -180,6 +186,7 @@ p{
     .form{max-width: 390px; font-size: 16px;}
     .bg{max-width: 700px; font-size: 24px;}
     #response{font-size: 28px;}
+    #msg{font-size: 18px;}
 }
     
 /* Extra large devices (large desktops, 1200px and up) */
@@ -188,7 +195,8 @@ p{
     h2 {font-size:3.5rem;}
     .form{max-width: 430px; font-size: 16px;}
     .bg{max-width: 800px; font-size: 30px; }
-    #response{font-size: 34px;}  
+    #response{font-size: 34px;}
+    #msg{font-size: 20px;}  
 }
 /* Extra Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1500px) {  
