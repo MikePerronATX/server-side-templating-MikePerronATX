@@ -13,6 +13,9 @@
 !*.png
 !*.js
 !*.map
+!*.min
+!*.min.css
+
 
 
 # gitignore files are not usually included but I'm includeing it so you have
