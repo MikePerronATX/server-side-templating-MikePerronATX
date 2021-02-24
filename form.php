@@ -24,8 +24,7 @@ $body_data = ["body-img" => "/images/new-orleans-hero.jpg"];
 
 $footer_data = [
     "localtime" => date('l jS \of F Y h:i:s A'),
-    "footertitle" => "Form Page",
-    "mAin" => "src='js/main.js'"];
+    "footertitle" => "Form Page"];
 
 echo $mustache->render($header, $header_data) . PHP_EOL;
 echo $mustache->render($body, $body_data) . PHP_EOL;
