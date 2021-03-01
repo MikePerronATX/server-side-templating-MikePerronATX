@@ -18,7 +18,8 @@ $footer = file_get_contents('templates/footer.html');
 $header_data = ["pagetitle" => "Code03 Michael Perron",
                 "logo" => "Code03", 
                 "home" => HOME,
-                "form" => FORM];
+                "form" => FORM,
+                "contact" => CONTACT];
 
 $body_data = ["body-img" => "/images/new-orleans-hero.jpg"];
 

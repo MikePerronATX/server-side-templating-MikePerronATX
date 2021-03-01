@@ -13,8 +13,11 @@ $header = file_get_contents('templates/header.html');
 $body = file_get_contents('templates/result.html');
 $footer = file_get_contents('templates/footer.html');
 
-$header_data = ["pagetitle" => "Code03 Michael Perron", "logo" => "Code03", "home" => HOME,
-                "form" => FORM];
+$header_data = ["pagetitle" => "Code03 Michael Perron",
+                "logo" => "Code03", 
+                "home" => HOME,
+                "form" => FORM,
+                "contact" => CONTACT];
 
 $footer_data = [
     "localtime" => date('l jS \of F Y h:i:s A'),
