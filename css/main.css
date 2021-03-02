@@ -49,6 +49,9 @@ footer{
     margin-top: 2%;
     margin-bottom: 20%;
 }
+.form textarea {
+    background: #e2f5cc;
+}
 .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
