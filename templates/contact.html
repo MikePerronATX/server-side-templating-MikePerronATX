@@ -3,7 +3,6 @@ Name: Michael Perron
 Coding 03 & 04 & 05
 Purpose: This page is the contact form template body.
 -->
-
 <div class="body-div">
         <h1>Mardi Gras Contact Form</h1>
      <hr>
@@ -12,28 +11,23 @@ Purpose: This page is the contact form template body.
         <img src="{{body-img}}">
     </div>
     <div class="form">
-        <form action="contact.php"    method="post">
-            <div class="col-sm-12">Enter your title.
-            <input type="text" id="title" placeholder="title" name="title" maxlength="64"><br>
+        <form id="email-form" name="email-form" action="email.php" method="post">
+            <div class="col-sm-12">Name
+                <input type="text" id="con_name" placeholder="name" name="con_name" maxlength="64"><br>
             </div>
-            <div class="col-sm-12">Enter your favorite drink.
-            <input type="text" id="drink" placeholder="favorite drink" name="drink" maxlength="64"><br>
+            <div class="col-sm-12">Email
+                <input type="text" id="con_email" placeholder="email" name="con_email" maxlength="64"><br>
             </div>
-            <div class="col-sm-12">Enter your pet's name.
-            <input type="text" id="pet" placeholder="pet name" name="pet" maxlength="64"><br>
+            <div class="col-sm-12">Confirm Email
+                <input type="text" id="con_remail" placeholder="confirm email" name="con_remail" maxlength="64"><br>
             </div>
-            <div class="col-sm-12">Enter a fictional place.
-            <input type="text" id="ficPlace" placeholder="fictional place" name="ficPlace" maxlength="64"><br>
+            <div class="col-sm-12">Subject
+                <input type="text" id="con_subject" placeholder="subject" name="con_subject" maxlength="64"><br>
             </div>
-            <div class="col-sm-12">Enter a real place.
-            <input type="text" id="rlPlace" placeholder="real place" name="rlPlace" maxlength="64"><br>
+            <div class="col-sm-12">Message
+                <textarea class="form-control rounded-0" id="con_mess" rows="3" maxlength="1000"></textarea>
             </div>
-            <div class="col-sm-12">Enter your email address.
-            <input type="text" id="email" placeholder="email" name="email" maxlength="64"><br>
-            </div>
-            <div class="col-sm-12">Confirm your email address.
-            <input type="text" id="remail" placeholder="confirm email" name="remail" maxlength="64"><br>
-            </div>
+        </form>
             <div class="input-div">
                 <button id="names-send" type="submit" class="">Send</button>
                 <button id="names-clear" type="button" class="">Clear</button>
@@ -45,4 +39,6 @@ Purpose: This page is the contact form template body.
         </div>
    </div>
 </div>
-<script src=js/main.js></script>
+<!-- jQuery must be loaded before any other JS that uses jQuery -->
+<script src=/js/jquery.min.js></script>
+<script src=/js/contact.js></script>
