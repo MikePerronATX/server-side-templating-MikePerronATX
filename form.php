@@ -3,7 +3,7 @@
  Name: Michael Perron
 Coding 03
 Purpose: This page sends template form data to
-form.html for dispaly.
+form.html for display.
  */
 
 require_once 'mustache/mustache/src/Mustache/Autoloader.php';
