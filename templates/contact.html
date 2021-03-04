@@ -4,9 +4,9 @@ Coding 03 & 04 & 05
 Purpose: This page is the contact form template body.
 -->
 <div class="body-div">
-        <h1>Mardi Gras Contact Form</h1>
+        <h1>Contact Form</h1>
      <hr>
-        <h2>Please Answer the Following Questions:</h2>
+        <h2>Enter Your Contact Information:</h2>
     <div class="body-img">
         <img src="{{body-img}}">
     </div>
@@ -15,19 +15,18 @@ Purpose: This page is the contact form template body.
             <div class="col-sm-12">Name
                 <input type="text" id="con_name" placeholder="name" name="con_name" maxlength="64"><br>
             </div>
+            <div class="col-sm-12">Subject
+                <input type="text" id="con_subject" placeholder="subject" name="con_subject" maxlength="64"><br>
+            </div>
             <div class="col-sm-12">Email
                 <input type="text" id="con_email" placeholder="email" name="con_email" maxlength="64"><br>
             </div>
             <div class="col-sm-12">Confirm Email
                 <input type="text" id="con_remail" placeholder="confirm email" name="con_remail" maxlength="64"><br>
             </div>
-            <div class="col-sm-12">Subject
-                <input type="text" id="con_subject" placeholder="subject" name="con_subject" maxlength="64"><br>
-            </div>
             <div class="col-sm-12">Message
                 <textarea class="form-control rounded-0" id="con_mess" rows="3" maxlength="1000"></textarea>
             </div>
-        </form>
             <div class="input-div">
                 <button id="names-send" type="submit" class="">Send</button>
                 <button id="names-clear" type="button" class="">Clear</button>
@@ -40,5 +39,5 @@ Purpose: This page is the contact form template body.
    </div>
 </div>
 <!-- jQuery must be loaded before any other JS that uses jQuery -->
-<script src=/js/jquery.min.js></script>
-<script src=/js/contact.js></script>
+<script src=js/jquery.min.js></script>
+<script src=js/contact.js></script>
