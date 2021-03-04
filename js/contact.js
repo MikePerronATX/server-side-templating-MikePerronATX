@@ -69,8 +69,11 @@ $(document).ready(function () {
     });
 
     // // event handler for the send button
-    // $("#names-send").click(function () {
-    //     return true;
+    $("#names-send").click(function () {
+        return true;
+    });
+        
+        // return true;
     //     // // validate form and get back error messages (if any)
     //     // var msg = validate();
     //     // // report errors or submit the form
@@ -83,6 +86,6 @@ $(document).ready(function () {
     //     //     // will prevent the form from submitting
     //     //     return false;
     //     // }
-    // });
+    
 
 });
