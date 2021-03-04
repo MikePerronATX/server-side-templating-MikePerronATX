@@ -5,12 +5,12 @@ function clearForm() {
      * this function replaces the text in text boxes with empty strings
      * and replaces the message area with an html <br>
      */
-    $('#con_name').val('');
-    $('#con_email').val('');
-    $('#con_remail').val('');
-    $('#con_subject').val('');
-    $('#con_mess').val('');
-    $('#msg').html('<br>'); // minor violation of concerns, but okay for now
+     $('#con_name').val('');
+     $('#con_email').val('');
+     $('#con_remail').val('');
+     $('#con_subject').val('');
+     $('#con_mess').val('');
+     $('#msg').html('<br>'); // minor violation of concerns, but okay for now
 }
 
 // function validate() {
@@ -72,7 +72,8 @@ $(document).ready(function () {
     $("#names-send").click(function () {
         return true;
     });
-        
+
+});
         // return true;
     //     // // validate form and get back error messages (if any)
     //     // var msg = validate();
@@ -86,6 +87,3 @@ $(document).ready(function () {
     //     //     // will prevent the form from submitting
     //     //     return false;
     //     // }
-    
-
-});
