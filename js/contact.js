@@ -5,11 +5,11 @@ function clearForm() {
      * this function replaces the text in text boxes with empty strings
      * and replaces the message area with an html <br>
      */
-     $('#con_name').val('');
-     $('#con_email').val('');
-     $('#con_remail').val('');
-     $('#con_subject').val('');
-     $('#con_mess').val('');
+     $('#name').val('');
+     $('#subject').val('');
+     $('#from').val('');
+     $('#re_from').val('');
+     $('#message').val('');
      $('#msg').html('<br>'); // minor violation of concerns, but okay for now
 }
 
