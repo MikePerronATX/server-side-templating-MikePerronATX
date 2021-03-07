@@ -1,7 +1,7 @@
 <?php
 /*
 Name: Michael Perron
-Coding 03
+Coding 05
 Purpose: This page is the landing page. As per instructions,
 it has an image at 100% in mobile size and 40% at desktop size.
 Also, the text wraps around the image in full view and drops

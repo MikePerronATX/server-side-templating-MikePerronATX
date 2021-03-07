@@ -1,10 +1,10 @@
 <?php
 /*
- Name: Michael Perron
+Name: Michael Perron
 Coding 05
 Purpose: This page sends template contact form data to
 contact.html for display.
- */
+*/
 
 require_once 'mustache/mustache/src/Mustache/Autoloader.php';
 Mustache_Autoloader::register();

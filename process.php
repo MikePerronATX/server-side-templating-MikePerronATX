@@ -1,8 +1,10 @@
 <?php
 /*
- * This file receives input from the user, validates it,
- * processes it, and sends it to result.html to be displated.
- */
+Name: Michael Perron
+Coding 05
+This file receives input from the user, validates it,
+processes it, and sends it to result.html to be displated.
+*/
 
 require_once 'mustache/mustache/src/Mustache/Autoloader.php';
 Mustache_Autoloader::register();

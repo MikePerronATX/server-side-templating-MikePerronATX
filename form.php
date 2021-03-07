@@ -1,10 +1,10 @@
 <?php
 /*
- Name: Michael Perron
-Coding 03
+Name: Michael Perron
+Coding 05
 Purpose: This page sends template form data to
 form.html for display.
- */
+*/
 
 require_once 'mustache/mustache/src/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
