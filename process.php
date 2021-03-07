@@ -60,13 +60,13 @@ if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet'])
     $email = strip_tags($email);
     $remail = strip_tags($remail);
 
-    $title = substr($title, $titleLen, 64);
-    $drink = substr($drink, $drinkLen, 64);
-    $pet = substr($pet, $petLen, 64);
-    $ficPlace = substr($ficPlace, $ficLen, 64);
-    $rlPlace = substr($rlPlace, $realLen, 64);
-    $email = substr($email, $emailLen, 64);
-    $remail = substr($remail, $remailLen, 64);
+    $title = substr($title, 0 , 64);
+    $drink = substr($drink, 0 , 64);
+    $pet = substr($pet, 0 , 64);
+    $ficPlace = substr($ficPlace, 0 , 64);
+    $rlPlace = substr($rlPlace, 0 , 64);
+    $email = substr($email, 0 , 64);
+    $remail = substr($remail, 0 , 64);
 
     $titleLen = strlen($title);
     $drinkLen = strlen($drink);
