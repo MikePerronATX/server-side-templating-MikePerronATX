@@ -1,7 +1,7 @@
 /* 
 Name: Michael Perron
 Coding 05
-Purpose: This page is to add the needed js to make page perform dynamically.
+Purpose: This page is to add the needed js to make page contact form perform correctly.
 */
 "use strict";
 

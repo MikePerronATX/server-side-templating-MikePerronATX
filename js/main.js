@@ -1,3 +1,8 @@
+/* 
+Name: Michael Perron
+Coding 05
+Purpose: This file contains a common function to title.js and email.js.
+*/
 "use strict";
 
 function validEmail(from) {
