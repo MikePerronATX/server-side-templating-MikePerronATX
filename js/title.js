@@ -72,20 +72,20 @@ function validate() {
     return errorMessage;
 }
 
-//JS object to button variable
-var sendBtn = document.getElementById("names-send");
-var clearBtn = document.getElementById("names-clear");
+$(document).ready(function () {
 
-sendBtn.onclick = function () {
-    var msgArea = document.getElementById("msg");
-    var msg = validate();
-    if (msg === "") {
-        return true;
-    } else {
-        msgArea.innerHTML = msg;
-        return false;
-    }
-};
-clearBtn.onclick = function () {
-    clearForm();
-};
+    $("#names-clear").click(function () {
+        clearForm();
+    });
+
+    $("#names-send").click(function () {
+        var msg = validate();
+        
+        if (msg === "") {
+            return true;
+        } else {
+            $("#msg").html(msg);
+            return false;
+        }
+    });
+});
