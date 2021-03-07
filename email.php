@@ -88,7 +88,6 @@ function main() {
         $from = filter_var($from, FILTER_VALIDATE_EMAIL);
         
         if (!empty($name) && !empty($from) && !empty($subject) && !empty($message)) {
-            echo("is here");
             
             $headers = "From: $from\r\n";
             $headers .= "Reply-To: $from\r\n";
