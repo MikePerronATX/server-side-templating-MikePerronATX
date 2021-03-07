@@ -1,16 +1,14 @@
 <?php
-
 /*
- Name: Michael Perron
+Name: Michael Perron
 Coding 05
-Purpose: display.
- */
-
+Purpose: get data from contact form, validate,
+determine which page (success or failure) that it
+should be sent to.
+*/
 require_once 'mustache/mustache/src/Mustache/Autoloader.php';
 
-
 function successpage() {
-
     Mustache_Autoloader::register();
 
     $mustache = new Mustache_Engine;
@@ -57,64 +55,52 @@ function failurepage() {
     echo $mustache->render($header, $header_data) . PHP_EOL;
     echo $mustache->render($body, $body_data) . PHP_EOL;
     echo $mustache->render($footer, $footer_data) . PHP_EOL;
-
 }
 
 function main() {
-    
-    if (!empty($_POST['name']) && !empty($_POST['subject']) && !empty($_POST['message'])
-                && !empty($_POST['from'])) {
+
+    /* This will test to make sure we have a non-empty $_POST from
+     * the form submission. */
+    if (!empty($_POST)) {
+
+        $name = $_POST['name'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        $from = $_POST['from'];
+
+        $name = trim($name);
+        $subject = trim($subject);
+        $message = trim($message);
+        $from = trim($from);
         
-/* * *********************************************
-* STEP 1: INPUT: Do NOT process, just get the data.
-* Do not delete this comment,
-* ********************************************** */
+        $name = strip_tags($name);
+        $subject = strip_tags($subject);
+        $message = strip_tags($message);
+        $from = strip_tags($from);
 
-    $name = $_POST['name'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    $from = $_POST['from'];
+        $name = substr($name, 0, 64);
+        $subject = substr($subject, 0, 64);
+        $message = substr($message, 0, 64);
 
+        //DONT FORGET TO REMOVE THIS
+        $nameLen = strlen($name);
+        $subjectLen = strlen($subject);
+        $messageLen = strlen($message);
+        $fromLen = strlen($from);
 
-/* * ******************************************************
-* STEP 2: VALIDATION: Always clean your input first!!!!
-* Do NOT process, only CLEAN and VALIDATE.
-* Do not delete this comment.
-* ****************************************************** */
+        $from = filter_var($from, FILTER_VALIDATE_EMAIL);
+        
+        //REMOVE THIS TOO
+        echo "$nameLen, $subjectLen, $messageLen, $fromLen";
+        
 
-    if (filter_var($from, FILTER_VALIDATE_EMAIL)) {
-        echo("$from is a valid email address");
-    } else {
-    echo("$from is not a valid email address");
-    }
-
-    
-
-    $name = trim($name);
-    $subject = trim($subject);
-    $message = trim($message);
-    
-    $name = strip_tags($name);
-    $subject = strip_tags($subject);
-    $message = strip_tags($message);
-    
-    $name = substr($name, $nameLen, 64);
-    $subject = substr($subject, $subjectLen, 64);
-    $message = substr($message, $messageLen, 1000);
-
-    $nameLen = strlen($name);
-    $subjectLen = strlen($subject);
-    $messageLen = strlen($message);
-    
-    
         /* The cleaning routines above may leave any variable empty. If we
          * find an empty variable, we stop processing because that means
          * someone tried to send us something malicious and/or incorrect. */
         if (!empty($name) && !empty($from) && !empty($subject) && !empty($message)) {
-            
+            echo("is here");
             /* this forms the correct email headers to send an email */
             $headers = "From: $from\r\n";
-            $headers = "Name: $name\r\n";
             $headers .= "Reply-To: $from\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
@@ -126,14 +112,11 @@ function main() {
              * https://www.php.net/manual/en/function.mail.php
              * then it's up to you to fill out the paramters correctly.
              */
-            
-            $to = "mikeperron.atx@gmail.com";
-            
-            if (mail($to, $subject, $message, $headers)) {
-                $time = time();
-                print "Script Ran $time";
-                successpage();
+
+            $to = $from;
                 
+            if (mail($to, $subject, $message, $headers)) {
+                successpage();
             } else {
                 failurepage();
             }
