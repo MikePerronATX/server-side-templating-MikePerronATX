@@ -1,71 +1,21 @@
 <?php
 /*
 Name: Michael Perron
-Coding 05
+Coding 06
 Purpose: get data from contact form, validate,
 determine which page (success or failure) that it
 should be sent to.
 */
-require_once 'mustache/mustache/src/Mustache/Autoloader.php';
-
-function successpage() {
-    Mustache_Autoloader::register();
-
-    $mustache = new Mustache_Engine;
-
-    $header = file_get_contents('templates/header.html');
-    $body = file_get_contents('templates/successpage.html');
-    $footer = file_get_contents('templates/footer.html');
-    
-    $header_data = [
-        "pagetitle" => "Code03 Michael Perron",
-        "logo" => "Code03", 
-        "home" => HOME,
-        "form" => FORM,
-        "contact" => CONTACT];
-    
-    $footer_data = [
-        "localtime" => date('l jS \of F Y h:i:s A'),
-        "footertitle" => "Success Page"];
-
-    echo $mustache->render($header, $header_data) . PHP_EOL;
-    echo $mustache->render($body, $body_data) . PHP_EOL;
-    echo $mustache->render($footer, $footer_data) . PHP_EOL;
-}
-
-function failurepage() {
-    Mustache_Autoloader::register();
-
-    $mustache = new Mustache_Engine;
-
-    $header = file_get_contents('templates/header.html');
-    $body = file_get_contents('templates/failurepage.html');
-    $footer = file_get_contents('templates/footer.html');
-    
-    $header_data = [
-        "pagetitle" => "Code03 Michael Perron",
-        "logo" => "Code03", 
-        "home" => HOME,
-        "form" => FORM,
-        "contact" => CONTACT];
-    
-    $footer_data = [
-        "localtime" => date('l jS \of F Y h:i:s A'),
-        "footertitle" => "Failure Page"];
-    echo $mustache->render($header, $header_data) . PHP_EOL;
-    echo $mustache->render($body, $body_data) . PHP_EOL;
-    echo $mustache->render($footer, $footer_data) . PHP_EOL;
-}
 
 function main() {
-
+    
     if (!empty($_POST)) {
-
-        $name = $_POST['name'];
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
-        $from = $_POST['from'];
-
+        
+        $name = $_POST['contactName'];
+        $subject = $_POST['contactSub'];
+        $message = $_POST['contactMess'];
+        $from = $_POST['contactFrom'];
+        
         $name = trim($name);
         $subject = trim($subject);
         $message = trim($message);
@@ -97,15 +47,15 @@ function main() {
             $to = $from;
                 
             if (mail($to, $subject, $message, $headers)) {
-                successpage();
+                echo "okay";
             } else {
-                failurepage();
+                echo "error3";
             }
         } else {
-            failurepage();
+            echo "error2";
         }
     } else {
-        failurepage();
+        echo "error1";
     }
 }
 // this kicks off the script
