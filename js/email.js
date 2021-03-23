@@ -1,6 +1,6 @@
 /* 
 Name: Michael Perron
-Coding 05
+Coding 06
 Purpose: This page is to add the needed js to make page contact form perform correctly.
 */
 "use strict";
@@ -13,8 +13,42 @@ function clearForm() {
      $('#message').val('');
      $('#msg').html('<br>'); // minor violation of concerns, but okay for now
 }
+
+function sendData(contactName, contactFrom, contactRe_from, 
+                                contactSub, contactMess ) {
+
+    //bring the message area in to report errors or "Sent!"
+    let msgArea = document.getElementById("msg");
+
+    $.ajax({
+        url: 'email.php',
+        type: 'POST',
+        data: {contactName: contactName,
+                contactFrom: contactFrom,
+                contactRe_from: contactRe_from,
+                contactSub: contactSub,
+                contactMess: contactMess},
+        success: function (val) {
+            console.log(val);
+            if (val === 'okay') {
+                clearForm();
+                msgArea.innerHTML = "Your message was sent";
+            } else {
+                msgArea.innerHTML = "Sorry, your email was not sent";
+            }
+        },
+        error: function () {
+            msgArea.innerHTML = "Server Error1";
+        }
+    });
+
+    return;
+}
+
 function validate() {
     var errorMessage = "";
+   
+    let msgArea = document.getElementById("msg");
 
     var contactName = $('#name').val().trim();
     var contactFrom = $('#from').val().trim();
@@ -46,9 +80,23 @@ function validate() {
     if (contactMess === "") {
         errorMessage += "Message cannot be empty.<br>";
     }
-    return errorMessage;
-}
+    
+    if (errorMessage === "") {
+        // no errors, so send the data to the server
+        console.log("calling ajax");
+        sendData(contactName,
+                    contactFrom,
+                    contactRe_from,
+                    contactSub,
+                    contactMess);
+    } else {
+        // report errors if there are any
+        console.log("errors");
+        msgArea.innerHTML = message;
+    }
 
+    return;
+}
 $(document).ready(function () {
 
     $("#names-clear").click(function () {
@@ -56,13 +104,6 @@ $(document).ready(function () {
     });
 
     $("#names-send").click(function () {
-        var msg = validate();
-        
-        if (msg === "") {
-            return true;
-        } else {
-            $("#msg").html(msg);
-            return false;
-        }
+        validate();
     });
 });
