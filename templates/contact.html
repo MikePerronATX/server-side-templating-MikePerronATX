@@ -1,6 +1,6 @@
 <!--
 Name: Michael Perron
-Coding 03 & 04 & 05
+Coding 03 & 04 & 05 & 06
 Purpose: This page is the contact form template body.
 -->
 <div class="body-div">
@@ -11,7 +11,7 @@ Purpose: This page is the contact form template body.
         <img src="{{body-img}}">
     </div>
     <div class="form">
-        <form id="email-form" name="email-form" action="email.php" method="post">
+        <form id="email-form" name="email-form">
             <div class="col-sm-12">Name
                 <input type="text" id="name" placeholder="name" name="name" maxlength="64"><br>
             </div>
@@ -28,7 +28,7 @@ Purpose: This page is the contact form template body.
                 <textarea class="form-control rounded-0" id="message" placeholder="message" name="message" rows="3" maxlength="1000"></textarea>
             </div>
             <div class="input-div">
-                <button id="names-send" type="submit" class="">Send</button>
+                <button id="names-send" type="button" class="">Send</button>
                 <button id="names-clear" type="button" class="">Clear</button>
             </div>
         </form>
