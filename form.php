@@ -1,7 +1,7 @@
 <?php
 /*
 Name: Michael Perron
-Coding 05
+Coding 06
 Purpose: This page sends template form data to
 form.html for display.
 */
