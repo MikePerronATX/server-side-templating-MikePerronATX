@@ -1,7 +1,7 @@
 <?php
 /*
 Name: Michael Perron
-Coding 05
+Coding 06
 Purpose: This page sends template contact form data to
 contact.html for display.
 */
