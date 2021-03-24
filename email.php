@@ -49,13 +49,13 @@ function main() {
             if (mail($to, $subject, $message, $headers)) {
                 echo "okay";
             } else {
-                echo "error3";
+                echo "error";
             }
         } else {
-            echo "error2";
+            echo "error";
         }
     } else {
-        echo "error1";
+        echo "error";
     }
 }
 // this kicks off the script
