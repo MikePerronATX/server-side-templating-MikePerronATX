@@ -1,6 +1,6 @@
 /* 
 Name: Michael Perron
-Coding 05
+Coding 06
 Purpose: This page is to add the needed js to make page title generating
 form perform correctly.
 */
