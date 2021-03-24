@@ -1,6 +1,6 @@
 <!--
 Name: Michael Perron
-Coding 05
+Coding 06
 Purpose: This page is the form template body.
 -->
 
@@ -12,7 +12,7 @@ Purpose: This page is the form template body.
         <img src="{{body-img}}">
     </div>
     <div class="form">
-        <form action="process.php"    method="post">
+        <form id="title-form" name="title-form">
             <div class="col-sm-12">Enter your title.
             <input type="text" id="title" placeholder="title" name="title" maxlength="64"><br>
             </div>
@@ -35,7 +35,7 @@ Purpose: This page is the form template body.
             <input type="text" id="remail" placeholder="confirm email" name="remail" maxlength="64"><br>
             </div>
             <div class="input-div">
-                <button id="names-send" type="submit" class="">Send</button>
+                <button id="names-send" type="button" class="">Send</button>
                 <button id="names-clear" type="button" class="">Clear</button>
             </div>
         </form>
