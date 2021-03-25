@@ -9,13 +9,13 @@ function main() {
 
     if (!empty($_POST)){
 
-        $title = $_POST['title'];
-        $drink = $_POST['drink'];
-        $pet = $_POST['pet'];
-        $ficPlace = $_POST['ficPlace'];
-        $rlPlace = $_POST['rlPlace'];
-        $email = $_POST['email'];
-        $remail = $_POST['remail'];
+        $title = $_POST['titleName'];
+        $drink = $_POST['drinkName'];
+        $pet = $_POST['petName'];
+        $ficPlace = $_POST['ficName'];
+        $rlPlace = $_POST['rlName'];
+        $email = $_POST['emailName'];
+        $remail = $_POST['remailName'];
             
         $title = trim($title);
         $drink = trim($drink);
@@ -60,7 +60,7 @@ function main() {
 
         if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !empty($rlPlace)) {
     }
-    
+
     else {
         echo "error";
     }
