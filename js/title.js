@@ -26,17 +26,8 @@ function sendData(){
     // creat an XMLHttpRequest object
     const XHR = new XMLHttpRequest();
     
-    // bring the form in
-    /* in this case notice I'm bringing the whole form in, but I could have also
-     * just passed the fname and lname directly and sent those. the jQuery
-     * version show that way of doing it, but you could do it here too.
-     */
     let formData = new FormData(document.getElementById("title-form"));
 
-    /*
-     * this is an asynchronous listener. it will not execute until after
-     * the server responds with a load event. It may not execute.
-     */
     XHR.addEventListener('load', function (event) {
         if (XHR.responseText === "okay") {
             console.log(XHR.responseText); // for debug
@@ -48,10 +39,6 @@ function sendData(){
         }
     });
 
-    /*
-     * this is an asynchronous listener. it will not execute until after
-     * the server responds with ae error event. It may not execute.
-     */
     XHR.addEventListener('error', function (event) {
         if (XHR.statusText !== "OK") {
             msgArea.innerHTML = "Server Error";
@@ -135,28 +122,26 @@ function validate() {
     } else {
         // report errors if there are any
         console.log("errors");
-        msgArea.innerHTML = message;
+        msgArea.innerHTML = errorMessage;
     }
-
-
-    //send the errors back or send an empty string if there is no error
-    return errorMessage;
+    
+    return;
 }
 
-$(document).ready(function () {
+//get the button into a JS object
+let sendBtn = document.getElementById("names-send");
 
-    $("#names-clear").click(function () {
-        clearForm();
-    });
+//create an event listener and handler for the send button
+sendBtn.onclick = function () {
+    // only need to call validate. validate will call sendData
+    validate();
+};
 
-    $("#names-send").click(function () {
-        var msg = validate();
-        
-        if (msg === "") {
-            return true;
-        } else {
-            $("#msg").html(msg);
-            return false;
-        }
-    });
-});
+//get the button into a JS object
+let clearBtn = document.getElementById("names-clear");
+
+//create an event listener and handler for the clear button
+clearBtn.onclick = function () {
+    //call clear if the button is pressed
+    clearForm();
+};
