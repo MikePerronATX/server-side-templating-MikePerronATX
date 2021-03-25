@@ -31,7 +31,7 @@ function sendData(){
      * just passed the fname and lname directly and sent those. the jQuery
      * version show that way of doing it, but you could do it here too.
      */
-    let formData = new FormData(document.getElementById("names-form"));
+    let formData = new FormData(document.getElementById("title-form"));
 
     /*
      * this is an asynchronous listener. it will not execute until after
@@ -65,28 +65,40 @@ function sendData(){
     return;
 }
 
-
 function validate() {
-    //empty error message
-    var errorMessage = "";
+    // start with an empty error message
+    let errorMessage = "";
 
-    //get the strings from the text boxes and trim them
-    var titleName = $('#title').val().trim();
-    var drinkName = $('#drink').val().trim();
-    var petName = $('#pet').val().trim();
-    var ficName = $('#ficPlace').val().trim();
-    var rlName = $('#rlPlace').val().trim();
-    var emailName = $('#email').val().trim();
-    var remailName = $('#remail').val().trim();
+    //bring the message area in to report errors
+    let msgArea = document.getElementById("msg");
+
+    //get all the elements into the function
+    let titleNameInput = document.getElementById("title");
+    let drinkNameInput = document.getElementById("drink");
+    let petNameInput = document.getElementById("pet");
+    let ficNameInput = document.getElementById("ficPlace");
+    let rlNameInput = document.getElementById("rlPlace");
+    let emailNameInput = document.getElementById("email");
+    let remailNameInput = document.getElementById("remail");
+
+    //get all the strings in the elements and trim them
+    let titleName = titleNameInput.value.trim();
+    let drinkName = drinkNameInput.value.trim();
+    let petName = petNameInput.value.trim();
+    let ficName = ficNameInput.value.trim();
+    let rlName = rlNameInput.value.trim();
+    let emailName = emailNameInput.value.trim();
+    let remailName = remailNameInput.value.trim();
     
-    //put the trimmed versions back into the form for good iser experience (UX)
-    $('#title').val(titleName);
-    $('#drink').val(drinkName);
-    $('#pet').val(petName);
-    $('#ficPlace').val(ficName);
-    $('#rlPlace').val(rlName);
-    $('#email').val(emailName);
-    $('#remail').val(remailName);
+
+    //put the trimmed versions back into the form for good user experience (UX)
+    titleNameInput.value = titleName;
+    drinkNameInput.value = drinkName;
+    petNameInput.value = petName;
+    ficNameInput.value = ficName;
+    rlNameInput.value = rlName;
+    emailNameInput.value = emailName;
+    remailNameInput.value = remailName;
 
     //test strings; store error messages
     if (titleName === "") {
@@ -116,6 +128,17 @@ function validate() {
     if (ficName === rlName) {
         errorMessage += "The fictional place & real place cannot match.<br>";
     }
+    if(errorMessage === ""){
+        // no errors, so send the data to the server
+        console.log("calling ajax");
+        sendData();
+    } else {
+        // report errors if there are any
+        console.log("errors");
+        msgArea.innerHTML = message;
+    }
+
+
     //send the errors back or send an empty string if there is no error
     return errorMessage;
 }
