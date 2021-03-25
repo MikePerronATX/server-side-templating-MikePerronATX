@@ -8,16 +8,63 @@ form perform correctly.
 
 //clear function
 function clearForm() {
-    $('#title').val('');
-    $('#drink').val('');
-    $('#pet').val('');
-    $('#ficPlace').val('');
-    $('#rlPlace').val('');
-    $('#email').val('');
-    $('#remail').val('');
-    $('#re_from').val('');
-    $('#msg').html('<br>'); // minor violation of concerns, but okay for now
+    document.getElementById("title").value = "";
+    document.getElementById("drink").value = "";
+    document.getElementById("pet").value = "";
+    document.getElementById("ficPlace").value = "";
+    document.getElementById("rlPlace").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("remail").value = "";
+    // document.getElementById("#re_from").value = "";
+    document.getElementById("msg").innerHTML = "<br>";// minor violation of concerns, but okay for now
 }
+
+function sendData(){
+    //bring the message area in to report errors or "Sent!"
+    let msgArea = document.getElementById("msg");
+
+    // creat an XMLHttpRequest object
+    const XHR = new XMLHttpRequest();
+    
+    // bring the form in
+    /* in this case notice I'm bringing the whole form in, but I could have also
+     * just passed the fname and lname directly and sent those. the jQuery
+     * version show that way of doing it, but you could do it here too.
+     */
+    let formData = new FormData(document.getElementById("names-form"));
+
+    /*
+     * this is an asynchronous listener. it will not execute until after
+     * the server responds with a load event. It may not execute.
+     */
+    XHR.addEventListener('load', function (event) {
+        if (XHR.responseText === "okay") {
+            console.log(XHR.responseText); // for debug
+            // you have to clear the form here, not in the handler
+            clearForm();
+            msgArea.innerHTML = "Sent!";
+        } else {
+            msgArea.innerHTML = "Processing Error";
+        }
+    });
+
+    /*
+     * this is an asynchronous listener. it will not execute until after
+     * the server responds with ae error event. It may not execute.
+     */
+    XHR.addEventListener('error', function (event) {
+        if (XHR.statusText !== "OK") {
+            msgArea.innerHTML = "Server Error";
+        }
+    });
+
+    // this opens the connection and sends the form
+    XHR.open('POST', 'process.php');
+    XHR.send(formData);
+    
+    return;
+}
+
 
 function validate() {
     //empty error message
