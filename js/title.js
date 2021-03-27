@@ -1,6 +1,6 @@
 /* 
 Name: Michael Perron
-Coding 06
+Coding 06 - RAW JS
 Purpose: This page is to add the needed js to make page title generating
 form perform correctly.
 */
@@ -31,12 +31,12 @@ function sendData(){
         if (XHR.responseText < "30") {
             console.log(XHR.responseText);
             // clearForm();
-            msgArea.innerHTML = "Small";
+            msgArea.innerHTML = "That’s a cute little title";
         }
         else {
             console.log(XHR.responseText);
             // clearForm();
-            msgArea.innerHTML = "Big";
+            msgArea.innerHTML = "That’s a heck of a title";
         }
     });
 
