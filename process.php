@@ -7,16 +7,18 @@ processes it, and sends it to result.html to be displated.
 */
 function main() {
 
-    if (!empty($_POST)){
+    if (!empty($_POST['title']) && !empty($_POST['drink']) && !empty($_POST['pet'])
+    && !empty($_POST['ficPlace']) && !empty($_POST['rlPlace']) && !empty($_POST['email'])
+    && !empty($_POST['remail'])) {
 
-        $title = $_POST['titleName'];
-        $drink = $_POST['drinkName'];
-        $pet = $_POST['petName'];
-        $ficPlace = $_POST['ficName'];
-        $rlPlace = $_POST['rlName'];
-        $email = $_POST['emailName'];
-        $remail = $_POST['remailName'];
-            
+        $title = $_POST['title'];
+        $drink = $_POST['drink'];
+        $pet = $_POST['pet'];
+        $ficPlace = $_POST['ficPlace'];
+        $rlPlace = $_POST['rlPlace'];
+        $email = $_POST['email'];
+        $remail = $_POST['remail'];
+
         $title = trim($title);
         $drink = trim($drink);
         $pet = trim($pet);
@@ -40,28 +42,22 @@ function main() {
         $rlPlace = substr($rlPlace, 0 , 64);
         $email = substr($email, 0 , 64);
         $remail = substr($remail, 0 , 64);
-
-        $titleLen = strlen($title);
-        $drinkLen = strlen($drink);
-        $petLen = strlen($pet);
-        $ficLen = strlen($ficPlace);
-        $realLen = strlen($rlPlace);
-        $emailLen = strlen($email);
-        $remailLen = strlen($remail);
-        $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
-        $sentenceLength = strlen($sentence);
-
-        if($sentenceLength > 30){
-            $heckcute = "That’s a heck of a title!​";
-        }
-        if($sentenceLength < 30){
-            $heckcute = "That’s a cute little title.";
-        }
-
+    
         if (!empty($title) && !empty($drink) && !empty($pet) && !empty($ficPlace) && !empty($rlPlace)) {
-    }
-
-    else {
+            
+            $titleLen = strlen($title);
+            $drinkLen = strlen($drink);
+            $petLen = strlen($pet);
+            $ficLen = strlen($ficPlace);
+            $realLen = strlen($rlPlace);
+            $sentence = "You are " . $title . " " . $drink . " " . $pet . " of ". $ficPlace . " and " . $rlPlace;
+            $sentenceLength = strlen($sentence);
+            echo $sentenceLength;
+            
+        } else {
+            echo "error";
+        }
+    } else {
         echo "error";
     }
 }
