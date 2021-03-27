@@ -6,7 +6,6 @@ form perform correctly.
 */
 "use strict";
 
-//clear function
 function clearForm() {
     document.getElementById("title").value = "";
     document.getElementById("drink").value = "";
@@ -15,27 +14,29 @@ function clearForm() {
     document.getElementById("rlPlace").value = "";
     document.getElementById("email").value = "";
     document.getElementById("remail").value = "";
-    // document.getElementById("#re_from").value = "";
+    
     document.getElementById("msg").innerHTML = "<br>";// minor violation of concerns, but okay for now
 }
 
 function sendData(){
-    //bring the message area in to report errors or "Sent!"
+    
     let msgArea = document.getElementById("msg");
 
-    // creat an XMLHttpRequest object
     const XHR = new XMLHttpRequest();
     
     let formData = new FormData(document.getElementById("title-form"));
-
+    
     XHR.addEventListener('load', function (event) {
-        if (XHR.responseText === "okay") {
-            console.log(XHR.responseText); // for debug
-            // you have to clear the form here, not in the handler
-            clearForm();
-            msgArea.innerHTML = "Sent!";
-        } else {
-            msgArea.innerHTML = "Processing Error";
+            
+        if (XHR.responseText < "30") {
+            console.log(XHR.responseText);
+            // clearForm();
+            msgArea.innerHTML = "Small";
+        }
+        else {
+            console.log(XHR.responseText);
+            // clearForm();
+            msgArea.innerHTML = "Big";
         }
     });
 
@@ -45,7 +46,6 @@ function sendData(){
         }
     });
 
-    // this opens the connection and sends the form
     XHR.open('POST', 'process.php');
     XHR.send(formData);
     
@@ -53,13 +53,10 @@ function sendData(){
 }
 
 function validate() {
-    // start with an empty error message
     let errorMessage = "";
 
-    //bring the message area in to report errors
     let msgArea = document.getElementById("msg");
 
-    //get all the elements into the function
     let titleNameInput = document.getElementById("title");
     let drinkNameInput = document.getElementById("drink");
     let petNameInput = document.getElementById("pet");
@@ -68,7 +65,6 @@ function validate() {
     let emailNameInput = document.getElementById("email");
     let remailNameInput = document.getElementById("remail");
 
-    //get all the strings in the elements and trim them
     let titleName = titleNameInput.value.trim();
     let drinkName = drinkNameInput.value.trim();
     let petName = petNameInput.value.trim();
@@ -77,8 +73,6 @@ function validate() {
     let emailName = emailNameInput.value.trim();
     let remailName = remailNameInput.value.trim();
     
-
-    //put the trimmed versions back into the form for good user experience (UX)
     titleNameInput.value = titleName;
     drinkNameInput.value = drinkName;
     petNameInput.value = petName;
@@ -87,7 +81,6 @@ function validate() {
     emailNameInput.value = emailName;
     remailNameInput.value = remailName;
 
-    //test strings; store error messages
     if (titleName === "") {
         errorMessage += "Title cannot be empty.<br>";
     }
@@ -115,12 +108,11 @@ function validate() {
     if (ficName === rlName) {
         errorMessage += "The fictional place & real place cannot match.<br>";
     }
+
     if(errorMessage === ""){
-        // no errors, so send the data to the server
         console.log("calling ajax");
         sendData();
     } else {
-        // report errors if there are any
         console.log("errors");
         msgArea.innerHTML = errorMessage;
     }
@@ -128,20 +120,14 @@ function validate() {
     return;
 }
 
-//get the button into a JS object
 let sendBtn = document.getElementById("names-send");
 
-//create an event listener and handler for the send button
 sendBtn.onclick = function () {
-    // only need to call validate. validate will call sendData
     validate();
 };
 
-//get the button into a JS object
 let clearBtn = document.getElementById("names-clear");
 
-//create an event listener and handler for the clear button
 clearBtn.onclick = function () {
-    //call clear if the button is pressed
     clearForm();
 };
