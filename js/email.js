@@ -1,6 +1,6 @@
 /* 
 Name: Michael Perron
-Coding 06
+Coding 06 - JQUERY
 Purpose: This page is to add the needed js to make page contact form perform correctly.
 */
 "use strict";
