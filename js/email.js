@@ -6,18 +6,17 @@ Purpose: This page is to add the needed js to make page contact form perform cor
 "use strict";
 
 function clearForm() {
-     $('#name').val('');
-     $('#subject').val('');
-     $('#from').val('');
-     $('#re_from').val('');
-     $('#message').val('');
-     $('#msg').html('<br>'); // minor violation of concerns, but okay for now
+    $('#name').val('');
+    $('#subject').val('');
+    $('#from').val('');
+    $('#re_from').val('');
+    $('#message').val('');
+    $('#msg').html('<br>'); // minor violation of concerns, but okay for now
 }
 
 function sendData(contactName, contactFrom, contactRe_from, 
                                 contactSub, contactMess ) {
 
-    //bring the message area in to report errors or "Sent!"
     let msgArea = document.getElementById("msg");
 
     $.ajax({
@@ -82,7 +81,6 @@ function validate() {
     }
     
     if (errorMessage === "") {
-        // no errors, so send the data to the server
         console.log("calling ajax");
         sendData(contactName,
                     contactFrom,
@@ -90,9 +88,8 @@ function validate() {
                     contactSub,
                     contactMess);
     } else {
-        // report errors if there are any
         console.log("errors");
-        msgArea.innerHTML = message;
+        msgArea.innerHTML = errorMessage;
     }
 
     return;
