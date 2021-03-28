@@ -30,12 +30,12 @@ function sendData(){
             
         if (XHR.responseText < "30") {
             console.log(XHR.responseText);
-            // clearForm();
+            clearForm();
             msgArea.innerHTML = "That’s a cute little title";
         }
         else {
             console.log(XHR.responseText);
-            // clearForm();
+            clearForm();
             msgArea.innerHTML = "That’s a heck of a title";
         }
     });
